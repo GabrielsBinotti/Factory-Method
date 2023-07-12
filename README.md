@@ -35,7 +35,7 @@ class Fox implements CarroProduct
 
   public function frear(): void
   {
-    echo "Freando	Fox\n";
+    echo "Freando Fox\n";
   }
 
   public function trocarMarcha(): void
@@ -48,17 +48,17 @@ class Fox implements CarroProduct
 class Gol implements CarroProduct
 {
 
-  public function	acelerar():	void
+  public function acelerar():	void
   {
     echo "Acelerando Gol\n";
   }
 
-  public function	frear(): void
+  public function frear(): void
   {
     echo "Freando	Gol\n";
   }
 
-  public function	trocarMarcha(): void
+  public function trocarMarcha(): void
   {
     echo "Trocando marcha do Gol\n";
   }
