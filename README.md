@@ -66,4 +66,39 @@ class Gol implements CarroProduct
 }
 
 ```
+Assim não teriamos problemas caso precisassemos futuramente substituir um modelo por outro. Note que cada metodo foi implementado à sua maneira e cada um exibe uma mensagem diferente.
+```
+use FactoryMethod\Product\CarroProduct;
+interface CarroFactory
+{
+  public function	criarCarro(string	$modeloCarro):	CarroProduct;
+}
+```
+A interface **CarroFactory** usa a CarroProduct pelo bloco de código **use FactoryMethod\Product\CarroProduct;**. Onde é definido apenas um único método que recebe uma string por parametro que representa o modelo a ser criado. Tambem é definido o tipo de retorno que será um CarroProduct, garantindo assim a compatibilidade de nossas fábricas.
+```
+use FactoryMethod\Product\{
+  CarroProduct,	Fox,	Gol
+};
+class VolkswagenFactory implements CarroFactory
+{
+  public function	criarCarro(string	$modeloCarro):	CarroProduct
+  {
+    if	($modeloCarro	==	'Fox')	{
+      return new	Fox();
+    }	elseif	($modeloCarro	==	'Gol')	{
+      return new	Gol();
+    }	else	{
+      throw new	\Exception("Modelo	de	carro	\"{$modeloCarro}\"	não	existe	no	sistema.");
+    }
+  }
+}
+```
+Agora foi criado toda a logica de criação de modelos de carro da volkswagen.
 
+Modo de usar:
+```
+$volskFactory	=	new	\FactoryMethod\VolkswagenFactory();
+$FoxModel	=	$volskFactory->criarCarro('Fox');
+$GolModel	=	$volskFactory->criarCarro('Gol');
+
+```
