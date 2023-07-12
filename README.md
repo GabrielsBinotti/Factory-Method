@@ -12,4 +12,58 @@ Na interface temos apenas a definição de métodos abstratos, sem qualquer defi
 
 **Concrete Creator** (criador concreto): classe que implementa a interface creator, ela é a fabrica de objetos.
 
-Exemplo de uso:
+### Exemplo de uso: ###
+
+```
+interface CarroProduct
+{
+  public function	acelerar():	void;
+  public function	frear():	void;
+  public function	trocarMarcha():	void;
+}
+```
+
+A interface **CarroProduct** serve como contrato, possuindo os metodos que devem ser escritos obrigatoriamente quando a interface for implementada. São os métodos em comum das classes. Agora iremos criar as classes de produtos concretos.
+```
+class Fox implements CarroProduct
+{
+
+  public function	acelerar():	void
+  {
+    echo "Acelerando Fox\n";
+  }
+
+  public function	frear(): void
+  {
+    echo "Freando	Fox\n";
+  }
+
+  public function	trocarMarcha(): void
+  {
+    echo "Trocando marcha do Fox\n";
+  }
+
+}
+
+class Gol implements CarroProduct
+{
+
+  public function	acelerar():	void
+  {
+    echo "Acelerando Gol\n";
+  }
+
+  public function	frear(): void
+  {
+    echo "Freando	Gol\n";
+  }
+
+  public function	trocarMarcha(): void
+  {
+    echo "Trocando marcha do Gol\n";
+  }
+
+}
+
+```
+
