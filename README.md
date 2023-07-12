@@ -71,19 +71,19 @@ Assim não teriamos problemas caso precisassemos futuramente substituir um model
 use FactoryMethod\Product\CarroProduct;
 interface CarroFactory
 {
-  public function	criarCarro(string	$modeloCarro):	CarroProduct;
+  public function criarCarro(string $modeloCarro): CarroProduct;
 }
 ```
 A interface **CarroFactory** usa a CarroProduct pelo bloco de código **use FactoryMethod\Product\CarroProduct;**. Onde é definido apenas um único método que recebe uma string por parametro que representa o modelo a ser criado. Tambem é definido o tipo de retorno que será um CarroProduct, garantindo assim a compatibilidade de nossas fábricas.
 ```
 use FactoryMethod\Product\{
-  CarroProduct,	Fox,	Gol
+  CarroProduct, Fox, Gol
 };
 class VolkswagenFactory implements CarroFactory
 {
   public function criarCarro(string $modeloCarro): CarroProduct
   {
-    if ($modeloCarro	==	'Fox')	{
+    if ($modeloCarro == 'Fox')	{
       return new Fox();
     }	elseif ($modeloCarro == 'Gol')	{
       return new Gol();
