@@ -17,9 +17,9 @@ Na interface temos apenas a definição de métodos abstratos, sem qualquer defi
 ```
 interface CarroProduct
 {
-  public function	acelerar():	void;
-  public function	frear():	void;
-  public function	trocarMarcha():	void;
+  public function acelerar(): void;
+  public function frear(): void;
+  public function trocarMarcha(): void;
 }
 ```
 
@@ -28,17 +28,17 @@ A interface **CarroProduct** serve como contrato, possuindo os metodos que devem
 class Fox implements CarroProduct
 {
 
-  public function	acelerar():	void
+  public function acelerar(): void
   {
     echo "Acelerando Fox\n";
   }
 
-  public function	frear(): void
+  public function frear(): void
   {
     echo "Freando	Fox\n";
   }
 
-  public function	trocarMarcha(): void
+  public function trocarMarcha(): void
   {
     echo "Trocando marcha do Fox\n";
   }
